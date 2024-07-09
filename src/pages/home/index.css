@@ -1,0 +1,12 @@
+.home-container{
+    background-image: url('./home-background.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 800px;
+    
+}
+
+:where(.css-dev-only-do-not-override-98ntnt).ant-menu-light, :where(.css-dev-only-do-not-override-98ntnt).ant-menu-light>.ant-menu {
+    color: rgba(0, 0, 0, 0.88);
+    background:transparent;
+}

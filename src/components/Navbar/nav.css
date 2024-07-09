@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+.ant-menu {
+    border-bottom: none;
+}
+
+.ant-menu-item {
+    font-size: 25px; 
+    padding: 0 20px; 
+
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+}
+
+.ant-menu-title-content{
+    color: black;
+}
+
+.cart{
+    margin-right: 20px;
+}
+.icon-main{
+    float: right;
+    line-height: 3.5;
+}
+
+.logo{
+    font-size: 30px; 
+    line-height: 2.0;
+    color: black;
+
+    font-family: "Anton SC", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.brand{
+    padding-left: 30px;
+}
+
+
+:where(.css-dev-only-do-not-override-98ntnt).ant-menu-light.ant-menu-horizontal >.ant-menu-item-selected::after, :where(.css-dev-only-do-not-override-98ntnt).ant-menu-light>.ant-menu.ant-menu-horizontal >.ant-menu-item-selected::after, :where(.css-dev-only-do-not-override-98ntnt).ant-menu-light.ant-menu-horizontal >.ant-menu-submenu-selected::after, :where(.css-dev-only-do-not-override-98ntnt).ant-menu-light>.ant-menu.ant-menu-horizontal >.ant-menu-submenu-selected::after{
+    border-bottom-width: 2px;
+    border-bottom-color:transparent;
+}
+
+:where(.css-dev-only-do-not-override-98ntnt).ant-menu-horizontal {
+    line-height: 70px;
+}
+
+:where(.css-dev-only-do-not-override-98ntnt).ant-row {
+    padding-top: 20px;
+}
