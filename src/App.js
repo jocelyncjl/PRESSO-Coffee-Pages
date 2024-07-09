@@ -10,6 +10,8 @@ function App() {
   return (
     <div className="App">
       <Theme>
+
+        
         {/* <Home /> */}
         {<CoffeeList/>}
         
