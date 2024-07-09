@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { Flex, Layout, Col, Row, Card, Typography, Button } from "antd";
 import Navbar from "../../components/Navbar/nav";
 import "./coffeeList.css";
+import velvetAmericano from './VelvetAmericano.png';
+import ClassicLatte from './ClassicLatte.png';
+import VannilaLatte from './VanillaLatte.png';
 
 const { Header, Footer, Sider, Content } = Layout;
 
@@ -40,7 +43,11 @@ const cardStyle = {
 
 const imgStyle = {
   display: "block",
-  width: 273,
+  width: 260,
+  height:260,
+  margin: "0 auto",
+  
+  
 };
 
 const CoffeeList = () => {
@@ -73,7 +80,7 @@ const CoffeeList = () => {
                     <Flex justify="space-between">
                       <img
                         alt="avatar"
-                        src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+                        src={velvetAmericano}
                         style={imgStyle}
                       />
                       <Flex
@@ -85,8 +92,7 @@ const CoffeeList = () => {
                         }}
                       >
                         <Typography.Title level={3}>
-                          “antd is an enterprise-class UI design language and
-                          React UI library.”
+                        Smooth Espresso with Milk, Cream & Velvety Foam
                         </Typography.Title>
                         <Button
                           type="primary"
@@ -117,7 +123,7 @@ const CoffeeList = () => {
                     <Flex justify="space-between">
                       <img
                         alt="avatar"
-                        src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+                        src={ClassicLatte}
                         style={imgStyle}
                       />
                       <Flex
@@ -129,8 +135,7 @@ const CoffeeList = () => {
                         }}
                       >
                         <Typography.Title level={3}>
-                          “antd is an enterprise-class UI design language and
-                          React UI library.”
+                        Espresso with Steamed Milk
                         </Typography.Title>
                         <Button
                           type="primary"
@@ -161,7 +166,7 @@ const CoffeeList = () => {
                     <Flex justify="space-between">
                       <img
                         alt="avatar"
-                        src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+                        src={VannilaLatte}
                         style={imgStyle}
                       />
                       <Flex
@@ -173,8 +178,7 @@ const CoffeeList = () => {
                         }}
                       >
                         <Typography.Title level={3}>
-                          “antd is an enterprise-class UI design language and
-                          React UI library.”
+                        Espresso with Vanilla Syrup
                         </Typography.Title>
                         <Button
                           type="primary"

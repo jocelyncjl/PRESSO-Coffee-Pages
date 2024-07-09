@@ -17,3 +17,6 @@
     line-height: 5.0;
 }
 
+:where(.css-dev-only-do-not-override-98ntnt).ant-flex {
+    display:block;
+}
