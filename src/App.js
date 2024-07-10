@@ -5,6 +5,7 @@ import { Theme } from '@radix-ui/themes';
 import Home from './pages/home'
 import CoffeeList from './pages/coffeeList/coffeeList';
 import GiftsList from './pages/gifts/gifts';
+import About from './pages/about/about';
 
 
 function App() {
@@ -15,7 +16,9 @@ function App() {
 
         {/* <Home /> */}
         {/* {<CoffeeList/>} */}
-        {<GiftsList/>}
+        {/* {<GiftsList/>} */}
+        {<About/>}
+
 
         
         
