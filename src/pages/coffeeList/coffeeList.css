@@ -20,3 +20,11 @@
 :where(.css-dev-only-do-not-override-98ntnt).ant-flex {
     display:block;
 }
+
+.CoffeeDescrip{
+    font-size: 16px;
+}
+
+:where(.css-dev-only-do-not-override-98ntnt).ant-btn-primary {
+    background: black;
+}
