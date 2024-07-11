@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
 .ant-menu-title-content{
     color: #ffffff;
 }
@@ -8,34 +10,43 @@
 }
 
 .BackgroundMain{
-    padding-bottom: 80%;
+    /* padding-bottom: 80%; */
 
     position: relative;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; 
 }
 
 .IntroBlock{
     background-color: black;
     width: 500px;
-    height: 500px;
     padding-bottom: 100px;
 
     position: absolute;
     color: white;
-    padding: 20px;
-    text-align: center;
+    padding: 40px;
+    /* text-align: center; */
     transform: translate(-50%, -50%);
-    top: 35%; 
+    top: 85%; 
     left: 63%;
 }
 
-.IntroBlock h2{
-    width: 100;
-    height: 50;
+.IntroBlock p{
+    margin-top: 50px;
+    font-size: 17px;
 
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+}
 
-
+.CoffeeImage{
+    position: absolute;
+    top: 1000px;
+    left: 135px;
+    width: 500px;
+    height: 500px;
 }
 
