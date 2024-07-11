@@ -83,7 +83,7 @@ const About = () => {
 
                         </div>
 
-                        <div className="">
+                        <div className="CoffeeIntro">
                             <h1>
                                 "PRESSO - Infusing Life with Unique Allure"
                             </h1>
@@ -96,9 +96,6 @@ const About = () => {
                     
                     </div>
                     
-
-
-
                 </Content>
             </Layout>
             

@@ -50,3 +50,37 @@
     height: 500px;
 }
 
+.CoffeeIntro{
+    display: flex;
+    position: absolute;
+    top: 1000px;
+    left: 700px;
+    width: 500px;
+    height: 500px;
+
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.CoffeeIntro h1{
+    color: black;
+   
+    
+
+}
+
+.CoffeeIntro p{
+    color: black;
+    font-size: 20px;
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+
+
+}
+
+
