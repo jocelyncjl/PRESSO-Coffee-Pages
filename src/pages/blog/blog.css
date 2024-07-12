@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
 .ant-menu-title-content{
     color: #ffffff;
@@ -20,11 +21,18 @@
 
 .CommentsIntro h2{
     color: black;
+    font-size: 27px;
+    font-weight: bolder;
 }
 
 
 .CommentsIntro p{
     color: black;
+
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
 }
 
 .CommentsDetails{
@@ -34,4 +42,12 @@
 
 .CommentsList{
     margin-top: 40px;
+}
+
+.ant-divider-inner-text{
+    font-size: 27px;
+    font-weight: bolder;
+
+
+
 }

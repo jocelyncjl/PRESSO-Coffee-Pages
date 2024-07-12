@@ -32,11 +32,11 @@ const contentStyle = {
 };
 
 const data = [
-  "Racing car sprays burning fuel into crowd.",
-  "Japanese princess to wed commoner.",
-  "Australian walks 100km after outback crash.",
-  "Man charged over missing wedding girl.",
-  "Los Angeles battles huge wildfires.",
+  "The coffee flavor of PRESSO is incredibly rich and full-bodied. Every sip is an absolute delight.",
+  "This is one of the best-tasting coffees I've ever tried.",
+  "As a coffee enthusiast, I'm deeply impressed by the quality of PRESSO's coffee.",
+  "I love the variety of flavors PRESSO offers, from their classic black coffee to their delightful flavored lattes.",
+  "Each cup is bursting with the rich aroma of premium coffee.",
 ];
 
 const { TextArea } = Input;
