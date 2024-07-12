@@ -6,6 +6,7 @@ import Home from './pages/home'
 import CoffeeList from './pages/coffeeList/coffeeList';
 import GiftsList from './pages/gifts/gifts';
 import About from './pages/about/about';
+import Blog from './pages/blog/blog';
 
 
 function App() {
@@ -17,7 +18,9 @@ function App() {
         {/* <Home /> */}
         {/* {<CoffeeList/>} */}
         {/* {<GiftsList/>} */}
-        {<About/>}
+        {/* {<About/>} */}
+        {<Blog/>}
+
 
 
         

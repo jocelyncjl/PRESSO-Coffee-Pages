@@ -1,0 +1,37 @@
+
+.ant-menu-title-content{
+    color: #ffffff;
+}
+
+.logo{
+    color: white;
+    line-height: 2.0;
+}
+
+.CommentsIntro{
+    margin-left: 70px;
+    margin-right: 70px;
+}
+
+.CommentsIntro h1{
+    color: black;
+    margin-top: 40px;
+}
+
+.CommentsIntro h2{
+    color: black;
+}
+
+
+.CommentsIntro p{
+    color: black;
+}
+
+.CommentsDetails{
+    margin-right: 500px;
+    font-size: 20px;
+}
+
+.CommentsList{
+    margin-top: 40px;
+}

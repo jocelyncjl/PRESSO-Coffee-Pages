@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Flex, Layout } from "antd";
+import { Flex, Layout,Button} from "antd";
 import Navbar from '../../components/Navbar/nav';
 import './about.css';
 import AboutBackground from './AboutBackground.jpg';
@@ -92,7 +92,10 @@ const About = () => {
                                 Striving for perfection in every step, from source to cup.
                                 Committed to delivering a distinct and unforgettable coffee experience for consumers.
                             </p>
+
+                            <Button type="primary">Leave a Comment</Button>
                         </div>
+
                     
                     </div>
                     
