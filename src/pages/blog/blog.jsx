@@ -91,7 +91,7 @@ const Blog = () => {
                     width: '100%',
                 }}
               >
-                <Button type="primary" block style={{marginTop:"10px"}}>
+                <Button type="primary" block style={{marginTop:"10px",fontSize:"20px"}}  size="middle">
                     Submit
                 </Button>
 

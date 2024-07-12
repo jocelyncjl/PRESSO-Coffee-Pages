@@ -14,18 +14,11 @@ function App() {
     <div className="App">
       <Theme>
 
-
-        {/* <Home /> */}
+        <Home />
         {/* {<CoffeeList/>} */}
         {/* {<GiftsList/>} */}
         {/* {<About/>} */}
-        {<Blog/>}
-
-
-
-        
-        
-        
+        {/* {<Blog/>} */}
 
 
 

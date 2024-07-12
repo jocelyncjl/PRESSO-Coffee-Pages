@@ -18,6 +18,11 @@ const items = [
     label: "About",
     key: "mail",
   },
+  {
+    label: "Blog",
+    key: "mail",
+  },
+
 ];
 
 const Navbar = () => {

@@ -93,7 +93,7 @@ const About = () => {
                                 Committed to delivering a distinct and unforgettable coffee experience for consumers.
                             </p>
 
-                            <Button type="primary">Leave a Comment</Button>
+                            <Button type="primary" style={{fontSize:"20px"}} size="middle">Leave a Comment</Button>
                         </div>
 
                     
@@ -102,26 +102,7 @@ const About = () => {
                 </Content>
             </Layout>
             
-
-
-
         </div>
-      
-        
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
     );
 
 };
