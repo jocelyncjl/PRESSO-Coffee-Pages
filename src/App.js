@@ -2,29 +2,30 @@ import logo from './logo.svg';
 // import './App.css';
 import '@radix-ui/themes/styles.css';
 import { Theme } from '@radix-ui/themes';
-import Home from './pages/home'
+import Home from './pages/home/index'
 import CoffeeList from './pages/coffeeList/coffeeList';
 import GiftsList from './pages/gifts/gifts';
 import About from './pages/about/about';
 import Blog from './pages/blog/blog';
 
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+
 
 function App() {
   return (
-    <div className="App">
-      <Theme>
-
-        <Home />
-        {/* {<CoffeeList/>} */}
-        {/* {<GiftsList/>} */}
-        {/* {<About/>} */}
-        {/* {<Blog/>} */}
-
-
-
-
-      </Theme>
-    </div>
+    <Router>
+      <div className="App">
+        <Theme>
+          <Routes>
+            <Route path='/' element={<Home/>}/>
+            <Route path='/coffee-list' element={<CoffeeList/>}/>
+            <Route path='/gifts' element={<GiftsList/>}/>
+            <Route path='/about' element={<About/>}/>
+            <Route path='/blog' element={<Blog/>}/>
+          </Routes>
+        </Theme>
+      </div>
+    </Router> 
   );
 }
 
