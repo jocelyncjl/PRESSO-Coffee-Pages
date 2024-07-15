@@ -70,8 +70,8 @@ const Blog = () => {
                 <Divider orientation="left">Comments</Divider>
                 <List
                   size="large"
-                  header={<div>Her</div>}
-                  footer={<div>Footer</div>}
+                  header={<div>Absolutely divine! PRESSO's blend is a taste of heaven in a cup</div>}
+                  footer={<div>Smooth and velvety.</div>}
                   bordered
                   dataSource={data}
                   renderItem={(item) => <List.Item>{item}</List.Item>}

@@ -5,6 +5,7 @@ import '../home/index.css';
 import { Flex,TabNav, Text, Button } from "@radix-ui/themes";
 import PressoSlogan from "../../components/HomeSlogan/slogan";
 
+
 const Home = () => {
   return (
     <div className="home-container">

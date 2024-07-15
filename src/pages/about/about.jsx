@@ -4,6 +4,7 @@ import Navbar from '../../components/Navbar/nav';
 import './about.css';
 import AboutBackground from './AboutBackground.jpg';
 import CoffeePlus from './CoffeePlus.jpg'
+import { Link } from "react-router-dom";
 
 
 const { Header, Footer, Sider, Content } = Layout;
@@ -93,7 +94,10 @@ const About = () => {
                                 Committed to delivering a distinct and unforgettable coffee experience for consumers.
                             </p>
 
-                            <Button type="primary" style={{fontSize:"20px"}} size="middle">Leave a Comment</Button>
+                            <Link to='/blog'>
+                                <Button type="primary" style={{fontSize:"20px"}} size="middle">Leave a Comment</Button>
+                            </Link>
+                            
                         </div>
 
                     
