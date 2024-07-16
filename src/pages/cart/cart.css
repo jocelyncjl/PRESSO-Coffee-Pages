@@ -1,0 +1,50 @@
+.logo{
+    font-size: 40px; 
+    line-height: 2.0;
+    color: black;
+
+    font-family: "Anton SC", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+}
+
+.brand{
+    padding-left: 30px;
+    padding-top: 20px;
+    
+}
+
+.cartBlock{
+    margin-left: 70px;
+    margin-right: 70px;
+}
+
+.cartBlock h1{
+    margin-left: 24px;
+    margin-right: 24px;
+    margin-top: 48px;
+    margin-bottom: 48px;
+    color: black;
+    text-align: center;
+    font-size: 50px;
+
+}
+
+.grandTotal span{
+    color: black;
+    font-size: 30px;
+}
+
+.grandTotal{
+    text-align: center;
+}
+
+.checkButton{
+    text-align: center;
+    margin-top: 30px;
+
+}
+
+
+
+
