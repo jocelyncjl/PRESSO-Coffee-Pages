@@ -12,24 +12,23 @@
     padding-left: 30px;
 }
 
-.registerMain{
+.signInMain{
     margin-left: 70px;
     margin-right: 70px;
 
-    /* display: grid; */
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
 
-.registerMain h1{
+.signInMain h1{
     color: black;
     text-align: center;
     margin-bottom: 30px;
     margin-top: 50px;
 }
 
-.registerForm{
+.signInForm{
     margin: auto;
     padding: 20px;
     width: 100%;

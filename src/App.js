@@ -9,6 +9,8 @@ import About from './pages/about/about';
 import Blog from './pages/blog/blog';
 import CartList from './pages/cart/cart';
 import RegisterForm from './pages/register/register';
+import SignInForm from './pages/signIn/signIn';
+
 
 
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
@@ -28,7 +30,13 @@ function App() {
             <Route path='/blog' element={<Blog/>}/>
           </Routes> */}
           {/* <CartList/> */}
-          <RegisterForm/>
+          {/* <RegisterForm/> */}
+          {<SignInForm/>}
+
+          
+
+
+
         </Theme>
       </div>
     </Router> 
