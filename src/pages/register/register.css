@@ -1,0 +1,44 @@
+.logo{
+    font-size: 30px; 
+    line-height: 2.0;
+    color: black;
+
+    font-family: "Anton SC", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.brand{
+    padding-left: 30px;
+}
+
+.registerMain{
+    margin-left: 70px;
+    margin-right: 70px;
+
+    /* display: grid; */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+
+.registerMain h1{
+    color: black;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 50px;
+}
+
+.registerForm{
+    margin: auto;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 800px;
+
+    
+
+    
+}
+

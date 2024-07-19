@@ -38,7 +38,7 @@ const userItems = [
     key: "0",
   },
   {
-    label: <a href="https://www.aliyun.com">Sign Up</a>,
+    label: <a href="https://www.aliyun.com">Join Now</a>,
     key: "1",
   },
   {
@@ -126,13 +126,6 @@ const Navbar = () => {
                 </Space>
               </a>
             </Dropdown>
-
-
-
-
-
-
-
           </div>
         </Col>
       </Row>
