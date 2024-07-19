@@ -10,7 +10,6 @@ import RegisterForm from './pages/register/register';
 import SignInForm from './pages/signIn/signIn';
 
 
-
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
 
@@ -24,6 +23,9 @@ function App() {
             <Route path='/' element={<Home/>}/>
             <Route path='/coffee-list' element={<CoffeeList/>}/>
             <Route path='/about' element={<About/>}/>
+            <Route path='/cartList' element={<CartList/>}/>
+            <Route path='/register' element={<RegisterForm/>}/>
+            <Route path='/signIn' element={<SignInForm/>}/>
           </Routes>
           {/* <CartList/> */}
           {/* <RegisterForm/> */}

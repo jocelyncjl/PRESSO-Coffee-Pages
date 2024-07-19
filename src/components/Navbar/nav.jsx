@@ -26,26 +26,22 @@ const items = [
 
 const userItems = [
   {
-    label: <a href="https://www.antgroup.com">My Profile</a>,
-    key: "0",
-  },
-  {
-    label: <a href="https://www.aliyun.com">Join Now</a>,
+    label: <Link to="/register">Join Now</Link>,
     key: "1",
   },
   {
-    label: <a href="https://www.aliyun.com">Sign In</a>,
+    label: <Link to="/signIn">Sign In</Link>,
     key: "1",
   },
   {
-    label: <a href="https://www.aliyun.com">Sign Out</a>,
+    label: <Link to="/">Sign Out</Link>,
     key: "1",
   },
 ];
 
 const cartItems = [
   {
-    label: <a href="https://www.aliyun.com">View Cart</a>,
+    label: <Link to="/cartList">View Cart</Link>,
     key: "1",
   },
 ];
