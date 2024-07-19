@@ -3,6 +3,7 @@ import { Layout, Button, Image, Form, Input, InputNumber } from "antd";
 import coffeeLogo from "./coffee-logo.png";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import "./register.css";
+import axios from "axios";
 
 const { Header, Footer, Sider, Content } = Layout;
 
@@ -45,7 +46,25 @@ const validateMessages = {
 };
 
 const onFinish = (values) => {
-  console.log(values);
+  event.preventDefault();
+
+  const userData = {
+    name: values.user.name,
+    password: values.user.password,
+    email: values.user.email,
+    age: values.user.age,
+    phone: values.user.phone,
+    address: values.user.address,
+  };
+
+  axios
+    .post("/api/users/register", userData)
+    .then((response) => {
+      console.log("Registration successful:", response.data);
+    })
+    .catch((error) => {
+      console.error("Registration failed:", error);
+    });
 };
 
 const RegisterForm = () => {
@@ -65,8 +84,8 @@ const RegisterForm = () => {
         <Content style={contentStyle}>
           <div className="registerMain">
             <div>
-                <h1>Create an account</h1>
-            </div>   
+              <h1>Create an account</h1>
+            </div>
             <div className="registerForm">
               <Form
                 {...layout}
@@ -89,10 +108,7 @@ const RegisterForm = () => {
                   <Input />
                 </Form.Item>
 
-                <Form.Item
-                  name={["user", "password"]}
-                  label="password"
-                >
+                <Form.Item name={["user", "password"]} label="Password">
                   <Input />
                 </Form.Item>
 
@@ -120,10 +136,10 @@ const RegisterForm = () => {
                 >
                   <InputNumber />
                 </Form.Item>
-                <Form.Item name={["user", "phone"]} label="phone">
+                <Form.Item name={["user", "phone"]} label="Phone">
                   <Input />
                 </Form.Item>
-                <Form.Item name={["user", "address"]} label="address">
+                <Form.Item name={["user", "address"]} label="Address">
                   <Input.TextArea />
                 </Form.Item>
                 <Form.Item
