@@ -19,16 +19,8 @@ const items = [
     key: "/coffee-list",
   },
   {
-    label: <Link to="/gifts">Gifts</Link>,
-    key: "/gifts",
-  },
-  {
     label: <Link to="/about">About</Link>,
     key: "/about",
-  },
-  {
-    label: <Link to="/blog">Blog</Link>,
-    key: "/blog",
   },
 ];
 

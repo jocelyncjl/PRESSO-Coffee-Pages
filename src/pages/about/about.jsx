@@ -92,15 +92,10 @@ const About = () => {
                                 Focused on developing and providing high-quality coffee.
                                 Striving for perfection in every step, from source to cup.
                                 Committed to delivering a distinct and unforgettable coffee experience for consumers.
-                            </p>
-
-                            <Link to='/blog'>
-                                <Button type="primary" style={{fontSize:"20px"}} size="middle">Leave a Comment</Button>
-                            </Link>
-                            
+                            </p>  
                         </div>
 
-                    
+
                     </div>
                     
                 </Content>
