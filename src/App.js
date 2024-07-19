@@ -27,9 +27,6 @@ function App() {
             <Route path='/register' element={<RegisterForm/>}/>
             <Route path='/signIn' element={<SignInForm/>}/>
           </Routes>
-          {/* <CartList/> */}
-          {/* <RegisterForm/> */}
-          {/* {<SignInForm/>} */}
         </Theme>
       </div>
     </Router> 

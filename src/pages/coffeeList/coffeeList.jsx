@@ -102,6 +102,9 @@ const CoffeeList = () => {
                             <div className="CoffeeDescrip">
                                 Smooth Espresso with Milk
                             </div>
+                            <div>
+                                €4.50
+                            </div>
                         </Typography.Title>
                         <Button
                           type="primary"
@@ -148,6 +151,9 @@ const CoffeeList = () => {
                             <div className="CoffeeDescrip">
                                 Espresso with Steamed Milk
                             </div>
+                            <div>
+                                €5.00
+                            </div>
                         </Typography.Title>
                         <Button
                           type="primary"
@@ -193,6 +199,9 @@ const CoffeeList = () => {
                             Vanilla Latte
                             <div className="CoffeeDescrip">
                                 Espresso with Vanilla Syrup
+                            </div>
+                            <div>
+                                €5.50
                             </div>
                         </Typography.Title>
                         <Button
@@ -242,7 +251,9 @@ const CoffeeList = () => {
                             <div className="CoffeeDescrip">
                                 Espresso with Caramel Syrup
                             </div>
-                        
+                            <div>
+                                €5.50
+                            </div>
                         </Typography.Title>
                         <Button
                           type="primary"
@@ -289,6 +300,9 @@ const CoffeeList = () => {
                             <div className="CoffeeDescrip">
                                 Espresso with Cherry Syrup
                             </div>
+                            <div>
+                                €5.75
+                            </div>
                         </Typography.Title>
                         <Button
                           type="primary"
@@ -334,6 +348,9 @@ const CoffeeList = () => {
                             Classic Cappuccino
                             <div className="CoffeeDescrip">
                                 Espresso, Steamed Milk, Foam, Classic
+                            </div>
+                            <div>
+                                €4.75
                             </div>
                         </Typography.Title>
                         <Button
@@ -383,6 +400,9 @@ const CoffeeList = () => {
                             <div className="CoffeeDescrip">
                                 Espresso, Steamed Milk, Coconut Milk, Coconut Syrup
                             </div>
+                            <div>
+                                €5.25
+                            </div>
                         </Typography.Title>
                         <Button
                           type="primary"
@@ -429,6 +449,9 @@ const CoffeeList = () => {
                             <div className="CoffeeDescrip">
                                 Strawberry Syrup, Ice, Milk, Whipped Cream
                             </div>
+                            <div>
+                                €5.50
+                            </div>
                         </Typography.Title>
                         <Button
                           type="primary"
@@ -474,6 +497,9 @@ const CoffeeList = () => {
                             Iced Avocado Cream Frappuccino
                             <div className="CoffeeDescrip">
                                 Avocado, Ice, Milk, Cream, Smooth and Creamy
+                            </div>
+                            <div>
+                                €5.50
                             </div>
                         </Typography.Title>
                         <Button
