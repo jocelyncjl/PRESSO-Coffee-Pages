@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { Button, Checkbox, Form, Input } from "antd";
-import { Layout, Image,InputNumber } from "antd";
+import { Button, Checkbox, Form, Input,message } from "antd";
+import { Layout, Image, InputNumber } from "antd";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 
 import coffeeLogo from "./coffee-logo.png";
 import "./signIn.css";
+import axios from "axios";
 
 const { Header, Footer, Sider, Content } = Layout;
 
@@ -36,11 +37,39 @@ const layout = {
 };
 
 const onFinish = (values) => {
-  console.log("Success:", values);
+  axios
+    .post("http://localhost:8080/api/login.php", values)
+    .then((response) => {
+      console.log("Success:", response.data);
+      message.success({
+        content: "Sign in successfully",
+        duration: 3,
+        style: {
+          marginTop: "20vh",
+        },
+      });
+    })
+    .catch((error) => {
+      console.log("Failed:", error);
+      message.error({
+        content: "Sign in failed. Please check your username and password.",
+        duration: 3,
+        style: {
+          marginTop: "20vh",
+        },
+      });
+    });
 };
 
 const onFinishFailed = (errorInfo) => {
   console.log("Failed:", errorInfo);
+  message.error({
+    content: "Please fill in all required fields correctly.",
+    duration: 3,
+    style: {
+      marginTop: "20vh",
+    },
+  });
 };
 
 const SignInForm = () => {

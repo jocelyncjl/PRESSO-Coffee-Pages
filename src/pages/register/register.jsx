@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Layout, Button, Image, Form, Input, InputNumber } from "antd";
+import { Layout, Button, Image, Form, Input, InputNumber, message } from "antd";
 import coffeeLogo from "./coffee-logo.png";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import "./register.css";
@@ -45,29 +45,32 @@ const validateMessages = {
   },
 };
 
-const onFinish = (values) => {
-  event.preventDefault();
-
-  const userData = {
-    name: values.user.name,
-    password: values.user.password,
-    email: values.user.email,
-    age: values.user.age,
-    phone: values.user.phone,
-    address: values.user.address,
+const RegisterForm = () => {
+  const onFinish = (values) => {
+    axios
+      .post("http://localhost:8080/api/register.php", values)
+      .then((response) => {
+        console.log(response.data);
+        message.success({
+          content: "Create an account successful",
+          duration: 3,
+          style: {
+            marginTop: "20vh",
+          },
+        });
+      })
+      .catch((error) => {
+        console.error("There was an error!", error);
+        message.error({
+          content: "Failed to create account. Please try again.",
+          duration: 3,
+          style: {
+            marginTop: "20vh",
+          },
+        });
+      });
   };
 
-  axios
-    .post("/api/users/register", userData)
-    .then((response) => {
-      console.log("Registration successful:", response.data);
-    })
-    .catch((error) => {
-      console.error("Registration failed:", error);
-    });
-};
-
-const RegisterForm = () => {
   return (
     <div>
       <Layout style={layoutStyle}>
