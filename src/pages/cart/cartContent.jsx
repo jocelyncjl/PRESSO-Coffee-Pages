@@ -28,12 +28,6 @@ export const CartProvider = ({ children }) => {
     setCartItems((prevItems) => prevItems.filter((item) => item.name !== itemName));
   };
 
-
-
-
-
-
-
   return (
     <CartContext.Provider value={{ cartItems, addToCart,removeFromCart }}>
       {children}

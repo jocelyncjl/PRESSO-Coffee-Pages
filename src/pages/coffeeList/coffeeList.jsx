@@ -1,5 +1,14 @@
-import React, { useState } from "react";
-import { Flex, Layout, Col, Row, Card, Typography, Button,message } from "antd";
+import React, { useState, useEffect } from "react";
+import {
+  Flex,
+  Layout,
+  Col,
+  Row,
+  Card,
+  Typography,
+  Button,
+  message,
+} from "antd";
 import Navbar from "../../components/Navbar/nav";
 import "./coffeeList.css";
 import velvetAmericano from "./VelvetAmericano.png";
@@ -54,69 +63,76 @@ const imgStyle = {
 };
 
 const CoffeeList = () => {
+  const [coffees, setCoffees] = useState([]);
   const { addToCart } = useCart();
 
-  const handleAddToCart = (coffee) => {
-    console.log('coffee-x',coffee);
-    
-    addToCart(coffee);
+  useEffect(() => {
+    fetch("http://localhost:8080/api/get_coffees.php")
+      .then((response) => response.json())
+      .then((data) => setCoffees(data))
+      .catch((error) => console.error("Error fetching coffees:", error));
+  }, []);
 
+  const handleAddToCart = (coffee) => {
+    console.log("coffee-x", coffee);
+
+    addToCart(coffee);
 
     message.success("Add to cart successfully");
   };
-    
 
   const CoffeeCard = ({ coffee }) => {
-    
-
-    return <Card
-      hoverable
-      style={cardStyle}
-      styles={{
-        body: {
-          padding: 0,
-          overflow: "hidden",
-        },
-      }}
-    >
-      <Flex justify="space-between">
-        <img alt={coffee.name} src={coffee.image} style={imgStyle} />
-        <Flex
-          vertical
-          align="flex-end"
-          justify="space-between"
-          style={{
-            padding: 32,
-          }}
-        >
-          <Typography.Title level={3}>
-            {coffee.name}
-            <div className="CoffeeDescrip">{coffee.description}</div>
-            <div>€{coffee.price.toFixed(2)}</div>
-          </Typography.Title>
-          <Button
-            type="primary"
-            onClick={() => handleAddToCart(coffee)}
+    return (
+      <Card
+        hoverable
+        style={cardStyle}
+        styles={{
+          body: {
+            padding: 0,
+            overflow: "hidden",
+          },
+        }}
+      >
+        <Flex justify="space-between">
+          <img
+            alt={coffee.name}
+            src={coffee.image_url}
+            style={imgStyle}
+          />
+          <Flex
+            vertical
+            align="flex-end"
+            justify="space-between"
+            style={{
+              padding: 32,
+            }}
           >
-            Add to Cart
-          </Button>
+            <Typography.Title level={3}>
+              {coffee.name}
+              <div className="CoffeeDescrip">{coffee.description}</div>
+              <div>€{coffee.price.toFixed(2)}</div>
+            </Typography.Title>
+            <Button type="primary" onClick={() => handleAddToCart(coffee)}>
+              Add to Cart
+            </Button>
+          </Flex>
         </Flex>
-      </Flex>
-    </Card>
+      </Card>
+    );
   };
 
-  const coffees = [
-    { name: "Iced Velvet Americano", description: "Smooth Espresso with Milk", price: 4.50, image: velvetAmericano },
-    { name: "Classic Latte", description: "Espresso with Steamed Milk", price: 5.00, image: ClassicLatte },
-    { name: "Vanilla Latte", description: "Espresso with Vanilla Syrup", price: 5.50, image: VannilaLatte },
-    { name: "Caramel Latte", description: "Espresso with Caramel Syrup", price: 5.50, image: CaramelLatte },
-    { name: "Cheery Latte", description: "Espresso with Cherry Syrup", price: 5.75, image: CherryLatte },
-    { name: "Classic Cappuccino", description: "Espresso, Steamed Milk, Foam, Classic", price: 4.75, image: ClassicCappuccino },
-    { name: "Coconut Cappuccino", description: "Espresso, Steamed Milk, Coconut Milk, Coconut Syrup", price: 5.25, image: CoconutCappuccino },
-    { name: "Iced Strawberry Cream Frappuccino", description: "Strawberry Syrup, Ice, Milk, Whipped Cream", price: 5.50, image: StrawberryFrappuccino },
-    { name: "Iced Avocado Cream Frappuccino", description: "Avocado, Ice, Milk, Cream, Smooth and Creamy", price: 5.50, image: AvocadoFrappuccino },
-    
-  ];
+  //   const coffees = [
+  //     { name: "Iced Velvet Americano", description: "Smooth Espresso with Milk", price: 4.50, image: velvetAmericano },
+  //     { name: "Classic Latte", description: "Espresso with Steamed Milk", price: 5.00, image: ClassicLatte },
+  //     { name: "Vanilla Latte", description: "Espresso with Vanilla Syrup", price: 5.50, image: VannilaLatte },
+  //     { name: "Caramel Latte", description: "Espresso with Caramel Syrup", price: 5.50, image: CaramelLatte },
+  //     { name: "Cheery Latte", description: "Espresso with Cherry Syrup", price: 5.75, image: CherryLatte },
+  //     { name: "Classic Cappuccino", description: "Espresso, Steamed Milk, Foam, Classic", price: 4.75, image: ClassicCappuccino },
+  //     { name: "Coconut Cappuccino", description: "Espresso, Steamed Milk, Coconut Milk, Coconut Syrup", price: 5.25, image: CoconutCappuccino },
+  //     { name: "Iced Strawberry Cream Frappuccino", description: "Strawberry Syrup, Ice, Milk, Whipped Cream", price: 5.50, image: StrawberryFrappuccino },
+  //     { name: "Iced Avocado Cream Frappuccino", description: "Avocado, Ice, Milk, Cream, Smooth and Creamy", price: 5.50, image: AvocadoFrappuccino },
+
+  //   ];
 
   return (
     <div className="coffee-main">
@@ -545,8 +561,8 @@ const CoffeeList = () => {
             </Content> */}
             <Content style={contentStyle}>
               <Row>
-                {coffees.map((coffee, index) => (
-                  <Col span={8} key={index}>
+                {coffees.map((coffee) => (
+                  <Col span={8} key={coffee.id}>
                     <CoffeeCard coffee={coffee} />
                   </Col>
                 ))}
