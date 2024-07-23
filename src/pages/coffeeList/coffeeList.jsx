@@ -11,16 +11,12 @@ import {
 } from "antd";
 import Navbar from "../../components/Navbar/nav";
 import "./coffeeList.css";
-import velvetAmericano from "./VelvetAmericano.png";
-import ClassicLatte from "./ClassicLatte.png";
-import VannilaLatte from "./VanillaLatte.png";
-import CaramelLatte from "./CaramelLatte.png";
-import CherryLatte from "./CherryLatte.png";
-import ClassicCappuccino from "./ClassicCappuccino.png";
-import CoconutCappuccino from "./CoconutCappuccino.png";
-import StrawberryFrappuccino from "./StrawberryFrappuccino.png";
-import AvocadoFrappuccino from "./AvocadoFrappuccino.png";
 import { useCart } from "../cart/cartContent";
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook } from '@fortawesome/free-brands-svg-icons';
+import { faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 const { Header, Footer, Sider, Content } = Layout;
 
@@ -49,6 +45,13 @@ const contentStyle = {
   lineHeight: "80vh",
   color: "#fff",
   backgroundColor: "white",
+};
+
+const footerStyle: React.CSSProperties = {
+  textAlign: "center",
+  color: "#fff",
+  backgroundColor: "black",
+  height: "30vh",
 };
 
 const cardStyle = {
@@ -94,11 +97,7 @@ const CoffeeList = () => {
         }}
       >
         <Flex justify="space-between">
-          <img
-            alt={coffee.name}
-            src={coffee.image_url}
-            style={imgStyle}
-          />
+          <img alt={coffee.name} src={coffee.image_url} style={imgStyle} />
           <Flex
             vertical
             align="flex-end"
@@ -569,6 +568,32 @@ const CoffeeList = () => {
               </Row>
             </Content>
           </Layout>
+    
+          <Footer style={footerStyle}>
+            <Row>
+              <Col span={4} offset={10}>
+                <h2>Contact us</h2>
+                <p>+353-089-26382637</p>
+                <p>info@presso.com</p>
+              </Col>
+              <Col span={4} offset={1}>
+                <h2>Social media</h2>
+                <span>
+                    <FontAwesomeIcon icon={faFacebook}/>
+                </span>
+                <span>
+                    <FontAwesomeIcon icon={faTwitter}/>
+                </span>
+                <span>
+                    <FontAwesomeIcon icon={faInstagram}/>
+                </span>
+
+              </Col>
+              <Col span={4} offset={1}>
+                <p>© 2024 PRESSO. All rights reserved.</p>  
+              </Col>
+            </Row>
+          </Footer>
         </Layout>
       </Flex>
     </div>

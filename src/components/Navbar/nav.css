@@ -24,7 +24,7 @@
 }
 .icon-main{
     float: right;
-    line-height: 3.5;
+    line-height: 4.8;
 }
 
 .logo{
@@ -39,6 +39,7 @@
 
 .brand{
     padding-left: 30px;
+    padding-top: 10px;
 }
 
 
@@ -52,5 +53,5 @@
 }
 
 :where(.css-dev-only-do-not-override-98ntnt).ant-row {
-    padding-top: 20px;
+    padding-top: 15px;
 }

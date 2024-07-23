@@ -1,87 +1,97 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
 
-.ant-menu-title-content{
-    color: #ffffff;
+.ant-menu-title-content {
+  color: #ffffff;
 }
 
-.logo{
-    color: white;
-    line-height: 2.0;
+.logo {
+  color: white;
+  line-height: 2;
 }
 
-.BackgroundMain{
-    /* padding-bottom: 80%; */
-
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    
+.BackgroundMain {
+  /* padding-bottom: 80%; */
+  padding-bottom: 50px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.IntroBlock{
-    background-color: black;
-    width: 500px;
-    padding-bottom: 100px;
-
-    position: absolute;
-    color: white;
-    padding: 40px;
-    /* text-align: center; */
-    transform: translate(-50%, -50%);
-    top: 85%; 
-    left: 63%;
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
-.IntroBlock p{
-    margin-top: 50px;
-    font-size: 17px;
+.IntroBlock {
+  background-color: black;
+  width: 500px;
+  padding-bottom: 100px;
 
-    font-family: "Josefin Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: <weight>;
-    font-style: normal;
+  position: absolute;
+  color: white;
+  padding: 40px;
+  /* text-align: center; */
+  transform: translate(-50%, -50%);
+  top: 85%;
+  left: 63%;
 }
 
-.CoffeeImage{
-    position: absolute;
-    top: 1000px;
-    left: 135px;
-    width: 500px;
-    height: 500px;
+.coffee-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 50px;
 }
 
-.CoffeeIntro{
-    display: flex;
-    position: absolute;
-    top: 1000px;
-    left: 700px;
-    width: 500px;
-    height: 500px;
+.IntroBlock p {
+  margin-top: 50px;
+  font-size: 17px;
 
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
 }
 
-.CoffeeIntro h1{
-    color: black;
-   
-    
-
+.CoffeeImage {
+  flex: 0 0 45%;
+  position: absolute;
+  top: 1000px;
+  left: 135px;
+  width: 500px;
+  height: 500px;
 }
 
-.CoffeeIntro p{
-    color: black;
-    font-size: 20px;
-    font-family: "Josefin Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: <weight>;
-    font-style: normal;
+.CoffeeIntro {
+  flex: 0 0 45%;
+  display: flex;
+  position: absolute;
+  top: 1000px;
+  left: 700px;
+  width: 500px;
+  height: 500px;
 
-
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
+.CoffeeIntro h1 {
+  color: black;
+}
 
+.CoffeeIntro p {
+  color: black;
+  font-size: 20px;
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+.coffeeMid{
+  height: 1020px;
+}

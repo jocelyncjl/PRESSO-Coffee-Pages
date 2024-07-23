@@ -1,6 +1,5 @@
 .coffee-main{
     position: relative;
-    height: 1000px;
     background-color: aqua;
 }
 
@@ -27,4 +26,13 @@
 
 :where(.css-dev-only-do-not-override-98ntnt).ant-btn-primary {
     background: black;
+}
+
+.svg-inline--fa {
+    height: 2em;
+    padding-right: 5px;
+}
+
+.coffeeMid{
+    position: relative;
 }

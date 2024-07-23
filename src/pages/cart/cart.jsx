@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Layout, Button, Image} from "antd";
+import { Layout, Button, Image, message } from "antd";
 import coffeeLogo from "./coffee-logo.png";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import "./cart.css";
@@ -31,9 +31,13 @@ const contentStyle = {
   backgroundColor: "white",
 };
 
+const handleCheckout = () => {
+  message.success("Paid successfully");
+};
+
 const CartList = () => {
-  const { cartItems,removeFromCart} = useCart();
-  console.log('cartItems',cartItems);
+  const { cartItems, removeFromCart } = useCart();
+  console.log("cartItems", cartItems);
   const columns = [
     {
       title: "Item",
@@ -74,7 +78,7 @@ const CartList = () => {
       <Layout style={layoutStyle}>
         <Header style={headerStyle}>
           <Link to="/">
-            <div className="brand">
+            <div className="cart-brand">
               <span className="logo">PRESSO</span>
               <span>
                 <Image src={coffeeLogo} width={30} height={30} />
@@ -96,6 +100,7 @@ const CartList = () => {
                 type="primary"
                 style={{ fontSize: "20px" }}
                 size="large"
+                onClick={handleCheckout}
               >
                 Check Out
               </Button>
