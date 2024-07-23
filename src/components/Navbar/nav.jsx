@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Menu, Image, Col, Row } from "antd";
+import { Menu, Image, Col, Row, message } from "antd";
 import userIcon from "../Navbar/user-icon.png";
 import cartIcon from "../Navbar/cart-icon.png";
 import coffeeLogo from "../Navbar/coffee-logo.png";
@@ -7,6 +7,10 @@ import "./nav.css";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import { DownOutlined } from "@ant-design/icons";
 import { Dropdown, Space } from "antd";
+
+const handleSignOut = () => {
+  message.success("Sign out successfully");
+};
 
 const items = [
   {
@@ -34,7 +38,7 @@ const userItems = [
     key: "1",
   },
   {
-    label: <Link to="/">Sign Out</Link>,
+    label: <a onClick={handleSignOut}>Sign Out</a>,
     key: "1",
   },
 ];
@@ -89,7 +93,7 @@ const Navbar = () => {
           <div className="icon-main">
             <Dropdown
               menu={{
-                items:cartItems,
+                items: cartItems,
               }}
               trigger={["click"]}
             >
@@ -103,7 +107,7 @@ const Navbar = () => {
 
             <Dropdown
               menu={{
-                items:userItems,
+                items: userItems,
               }}
               trigger={["click"]}
             >

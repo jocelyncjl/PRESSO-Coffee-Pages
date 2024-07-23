@@ -78,7 +78,7 @@ const SignInForm = () => {
       <Layout style={layoutStyle}>
         <Header style={headerStyle}>
           <Link to="/">
-            <div className="brand">
+            <div className="signIn-brand">
               <span className="logo">PRESSO</span>
               <span>
                 <Image src={coffeeLogo} width={30} height={30} />
