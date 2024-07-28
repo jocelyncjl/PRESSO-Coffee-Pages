@@ -96,11 +96,13 @@ const Navbar = () => {
                 items: cartItems,
               }}
               trigger={["click"]}
+              arrow
             >
               <a onClick={(e) => e.preventDefault()}>
                 <Space>
-                  <Image src={cartIcon} width={24} height={24} />
-                  <DownOutlined />
+                  <div className="cart-icon">
+                    <img src={cartIcon} width={24} height={24} />
+                  </div>
                 </Space>
               </a>
             </Dropdown>
@@ -110,11 +112,13 @@ const Navbar = () => {
                 items: userItems,
               }}
               trigger={["click"]}
+              arrow
             >
               <a onClick={(e) => e.preventDefault()}>
                 <Space>
-                  <Image src={userIcon} width={24} height={24} />
-                  <DownOutlined />
+                  <div className="user-icon">
+                    <img src={userIcon} width={24} height={24} />
+                  </div>
                 </Space>
               </a>
             </Dropdown>

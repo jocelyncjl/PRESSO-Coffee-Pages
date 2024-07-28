@@ -22,9 +22,10 @@
 .cart{
     margin-right: 20px;
 }
+
 .icon-main{
     float: right;
-    line-height: 4.8;
+    line-height: 6;
 }
 
 .logo{
@@ -54,4 +55,8 @@
 
 :where(.css-dev-only-do-not-override-98ntnt).ant-row {
     padding-top: 15px;
+}
+
+.cart-icon{
+    padding-right: 20px;
 }

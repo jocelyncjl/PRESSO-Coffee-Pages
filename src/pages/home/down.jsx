@@ -24,11 +24,12 @@ const App = () => (
       items,
     }}
     trigger={['click']}
+    arrow
   >
     <a onClick={(e) => e.preventDefault()}>
       <Space>
         Click me
-        <DownOutlined />
+        {/* <DownOutlined /> */}
       </Space>
     </a>
   </Dropdown>
