@@ -1,0 +1,55 @@
+.logo{
+    font-size: 30px; 
+    line-height: 2.0;
+    color: black;
+
+    font-family: "Anton SC", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.brand{
+    padding-left: 30px;
+}
+
+.order-main{
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+.order-title{
+    color: black;
+}
+
+.title-right{
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-left h1{
+    margin-bottom: 0px;
+}
+
+.title-left p{
+    margin-top: 0px;
+}
+
+:where(.css-dev-only-do-not-override-98ntnt).ant-divider-horizontal {
+        margin: 0px 0;
+}
+
+.ant-card-head-title{
+    font-size: 25px;
+}
+
+.details-content{
+    display: flex;
+    justify-content: space-between;
+}
+
+.details-content{
+    padding-top: 40px;
+    font-size: 18px;
+}

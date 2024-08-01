@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Layout, Button, Image, message } from "antd";
 import coffeeLogo from "./coffee-logo.png";
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Link, useNavigate} from "react-router-dom";
 import "./cart.css";
 
 import { Space, Table, Tag } from "antd";
@@ -31,12 +31,13 @@ const contentStyle = {
   backgroundColor: "white",
 };
 
-const handleCheckout = () => {
-  message.success("Paid successfully");
-};
+// const handleCheckout = () => {
+//   message.success("Paid successfully");
+// };
 
 const CartList = () => {
-  const { cartItems, removeFromCart } = useCart();
+  const { cartItems, removeFromCart,clearCart} = useCart();
+  const navigate = useNavigate();
   console.log("cartItems", cartItems);
   const columns = [
     {
@@ -73,6 +74,47 @@ const CartList = () => {
 
   const grandTotal = cartItems.reduce((sum, item) => sum + item.total, 0);
 
+  const handleCheckout = () => {
+    const orderData = {
+      user_id: 1,
+      total_amount: grandTotal,
+      items: cartItems.map(item => ({
+        coffee_id: item.id,
+        quantity: item.quantity,
+        price: item.price
+      }))
+    };
+
+    console.log('Sending order data:', orderData); // 添加这行
+
+  
+    fetch('http://localhost:8080/api/create_order.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(orderData),
+    })
+    .then(response => {
+      console.log('Response status:', response.status); // 添加这行
+      return response.json();
+    })
+    .then(data => {
+      console.log('Received data:', data); // 添加这行
+      if (data.order_id) {
+        message.success('Payment successful! Order submitted.');
+        // clearCart();
+        navigate(`/order/${data.order_id}`);
+      } else {
+        message.error('Failed to submit order: ' + (data.message || 'Unknown error'));
+      }
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+      message.error('An error occurred while submitting the order');
+    });
+  };
+
   return (
     <div>
       <Layout style={layoutStyle}>
@@ -89,7 +131,11 @@ const CartList = () => {
         <Content style={contentStyle}>
           <div className="cartBlock">
             <h1>YOUR CART</h1>
-            <Table columns={columns} dataSource={cartItems} />;
+            <Table columns={columns} 
+            dataSource={cartItems.map((item, index) => ({ 
+              ...item, 
+              key: item.id || item.name || index 
+            }))}/>
             <div className="grandTotal">
               <span>Grand Total:</span>
               <span> €{grandTotal.toFixed(2)}</span>

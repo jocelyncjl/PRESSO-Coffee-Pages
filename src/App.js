@@ -9,6 +9,8 @@ import CartList from './pages/cart/cart';
 import RegisterForm from './pages/register/register';
 import SignInForm from './pages/signIn/signIn';
 import { CartProvider } from './pages/cart/cartContent';
+import MyOrder from './pages/myOrder';
+import Order from './pages/myOrder/orderDesc';
 
 
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
@@ -24,8 +26,10 @@ function App() {
               <Route path='/coffee-list' element={<CoffeeList />} />
               <Route path='/about' element={<About />} />
               <Route path='/cartList' element={<CartList />} />
+              <Route path='/order/:id?' element={<Order />} />
               <Route path='/register' element={<RegisterForm />} />
               <Route path='/signIn' element={<SignInForm />} />
+              <Route path='/myOrder' element={<MyOrder />} />
             </Routes>
           </Theme>
         </div>

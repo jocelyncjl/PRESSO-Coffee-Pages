@@ -48,6 +48,10 @@ const cartItems = [
     label: <Link to="/cartList">View Cart</Link>,
     key: "1",
   },
+  {
+    label: <Link to="/myOrder">My Order</Link>,
+    key: "1",
+  },
 ];
 
 const Navbar = () => {
