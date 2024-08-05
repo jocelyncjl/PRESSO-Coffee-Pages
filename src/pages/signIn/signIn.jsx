@@ -7,6 +7,9 @@ import coffeeLogo from "./coffee-logo.png";
 import "./signIn.css";
 import axios from "axios";
 
+import { useCart } from "../cart/cartContent"; 
+import { useNavigate } from "react-router-dom";
+
 const { Header, Footer, Sider, Content } = Layout;
 
 const layoutStyle = {
@@ -36,7 +39,7 @@ const layout = {
   },
 };
 
-const onFinish = (values) => {
+/* const onFinish = (values) => {
   axios
     .post("http://localhost:8080/api/login.php", values)
     .then((response) => {
@@ -59,9 +62,9 @@ const onFinish = (values) => {
         },
       });
     });
-};
+}; */
 
-const onFinishFailed = (errorInfo) => {
+/* const onFinishFailed = (errorInfo) => {
   console.log("Failed:", errorInfo);
   message.error({
     content: "Please fill in all required fields correctly.",
@@ -70,9 +73,49 @@ const onFinishFailed = (errorInfo) => {
       marginTop: "20vh",
     },
   });
-};
+}; */
 
 const SignInForm = () => {
+
+  const { login } = useCart(); 
+  const navigate = useNavigate();
+
+  const onFinish = async (values) => {
+    try {
+      const response = await axios.post("http://localhost:8080/api/login.php", values,{ withCredentials: true});
+
+      console.log("Success:", response.data);
+      
+      if (response.data.data && response.data.data.user) {
+        login(response.data.data.user);
+        message.success({
+          content: response.data.message,
+          duration: 3,
+          style: { marginTop: "20vh" },
+        });
+        navigate('/');
+      } else {
+        throw new Error(response.data.message || "User data not received");
+      }
+    } catch (error) {
+      console.log("Failed:", error);
+      message.error({
+        content: "Sign in failed. Please check your username and password.",
+        duration: 3,
+        style: { marginTop: "20vh" },
+      });
+    }
+  };
+
+  const onFinishFailed = (errorInfo) => {
+    console.log("Failed:", errorInfo);
+    message.error({
+      content: "Please fill in all required fields correctly.",
+      duration: 3,
+      style: { marginTop: "20vh" },
+    });
+  };
+
   return (
     <div>
       <Layout style={layoutStyle}>

@@ -120,19 +120,6 @@ const CoffeeList = () => {
     );
   };
 
-  //   const coffees = [
-  //     { name: "Iced Velvet Americano", description: "Smooth Espresso with Milk", price: 4.50, image: velvetAmericano },
-  //     { name: "Classic Latte", description: "Espresso with Steamed Milk", price: 5.00, image: ClassicLatte },
-  //     { name: "Vanilla Latte", description: "Espresso with Vanilla Syrup", price: 5.50, image: VannilaLatte },
-  //     { name: "Caramel Latte", description: "Espresso with Caramel Syrup", price: 5.50, image: CaramelLatte },
-  //     { name: "Cheery Latte", description: "Espresso with Cherry Syrup", price: 5.75, image: CherryLatte },
-  //     { name: "Classic Cappuccino", description: "Espresso, Steamed Milk, Foam, Classic", price: 4.75, image: ClassicCappuccino },
-  //     { name: "Coconut Cappuccino", description: "Espresso, Steamed Milk, Coconut Milk, Coconut Syrup", price: 5.25, image: CoconutCappuccino },
-  //     { name: "Iced Strawberry Cream Frappuccino", description: "Strawberry Syrup, Ice, Milk, Whipped Cream", price: 5.50, image: StrawberryFrappuccino },
-  //     { name: "Iced Avocado Cream Frappuccino", description: "Avocado, Ice, Milk, Cream, Smooth and Creamy", price: 5.50, image: AvocadoFrappuccino },
-
-  //   ];
-
   return (
     <div className="coffee-main">
       <Flex gap="middle" wrap>

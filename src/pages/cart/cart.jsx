@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect} from "react";
 import { Layout, Button, Image, message } from "antd";
 import coffeeLogo from "./coffee-logo.png";
 import { BrowserRouter as Router, Route, Routes, Link, useNavigate} from "react-router-dom";
@@ -7,6 +7,7 @@ import "./cart.css";
 import { Space, Table, Tag } from "antd";
 
 import { useCart } from "./cartContent";
+
 
 const { Header, Footer, Sider, Content } = Layout;
 
@@ -36,9 +37,16 @@ const contentStyle = {
 // };
 
 const CartList = () => {
-  const { cartItems, removeFromCart,clearCart} = useCart();
+  const { cartItems, removeFromCart,clearCart,currentUser} = useCart();
+
   const navigate = useNavigate();
+
+  useEffect(() => {
+    console.log("Current user in cart:", currentUser);
+  }, [currentUser]);
+
   console.log("cartItems", cartItems);
+
   const columns = [
     {
       title: "Item",
@@ -75,8 +83,14 @@ const CartList = () => {
   const grandTotal = cartItems.reduce((sum, item) => sum + item.total, 0);
 
   const handleCheckout = () => {
+    if (!currentUser) {
+      console.log("No current user found at checkout");
+      message.error("Please log in to complete your order");
+      return;
+    }
+
     const orderData = {
-      user_id: 1,
+      user_id: currentUser.id,
       total_amount: grandTotal,
       items: cartItems.map(item => ({
         coffee_id: item.id,
@@ -85,7 +99,7 @@ const CartList = () => {
       }))
     };
 
-    console.log('Sending order data:', orderData); // 添加这行
+    console.log('Sending order data:', orderData); 
 
   
     fetch('http://localhost:8080/api/create_order.php', {
@@ -96,15 +110,15 @@ const CartList = () => {
       body: JSON.stringify(orderData),
     })
     .then(response => {
-      console.log('Response status:', response.status); // 添加这行
+      console.log('Response status:', response.status); 
       return response.json();
     })
     .then(data => {
-      console.log('Received data:', data); // 添加这行
+      console.log('Received data:', data); 
       if (data.order_id) {
         message.success('Payment successful! Order submitted.');
         // clearCart();
-        navigate(`/order/${data.order_id}`);
+        // navigate(`/order/${data.order_id}`);
       } else {
         message.error('Failed to submit order: ' + (data.message || 'Unknown error'));
       }

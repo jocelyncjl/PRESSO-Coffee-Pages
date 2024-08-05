@@ -40,8 +40,13 @@ export default function MyOrder() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    fetchOrders();
+  }, []);
+
+  const fetchOrders = () => {
     setIsLoading(true);
-    fetch(`http://localhost:8080/api/get_order.php`)
+    fetch(`http://localhost:8080/api/get_order.php`,{method: 'GET',
+    credentials: 'include' })
       .then((response) => response.json())
       .then((data) => {
         console.log('orders----------', data);
@@ -52,7 +57,7 @@ export default function MyOrder() {
         console.error("Error:", error);
         setIsLoading(false);
       });
-  }, []);
+  };
 
   const columns = [
     {
@@ -77,6 +82,7 @@ export default function MyOrder() {
       render: (_, record) => `€${(record.quantity * record.price).toFixed(2)}`,
     },
   ];
+
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -127,7 +133,7 @@ export default function MyOrder() {
               renderItem={(order) => (
                 <List.Item key={order.id}>
                     <a href={`/order/${order.id}`}>
-                  <Card title={`Order #${order.id}`}>
+                  <Card title={`Order #${order.id}`} >
                     <Row gutter={16}>
                       <Col span={12}>
                         <p>Date: {new Date(order.order_date).toLocaleString()}</p>
